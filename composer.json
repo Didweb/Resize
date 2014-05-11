@@ -9,6 +9,13 @@
 			"email": "info@did-web.com"
 		}
 	],
+	"repositories":[
+	
+			{
+            "type": "vcs",
+            "url": "git@github.com:Didweb/Resize.git"
+        },
+	]
 	minimum-stability": "dev"
 	
 }
