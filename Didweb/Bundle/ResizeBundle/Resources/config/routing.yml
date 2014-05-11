@@ -1,0 +1,3 @@
+didweb_resize_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: DidwebResizeBundle:Default:index }

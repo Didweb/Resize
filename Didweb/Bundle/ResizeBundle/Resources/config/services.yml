@@ -1,0 +1,7 @@
+parameters:
+#    didweb_resize.example.class: Didweb\Bundle\ResizeBundle\Example
+
+services:
+#    didweb_resize.example:
+#        class: %didweb_resize.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
