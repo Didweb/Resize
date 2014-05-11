@@ -1,12 +1,14 @@
 {
 	"name": "didweb/resize",
 	"description": "Redimensionar imagenes",
+	"type": "symfony-bundle",
+    "license": "MIT",
 	"authors": [
 		{
 			"name": "Eduard Pinuaga Linares",
 			"email": "info@did-web.com"
 		}
-	]
-	
+	],
+	minimum-stability": "dev"
 	
 }
