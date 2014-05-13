@@ -12,17 +12,21 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
-    /**
-     * {@inheritDoc}
-     */
+   
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('didweb_resize');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+		$rootNode
+			->children()
+				->scalarNode('img_carpeta')->defaultValue('fotos')->end()
+				->integerNode('img_ancho_p')->defaultValue(240)->end()	
+				->integerNode('img_alto_p')->defaultValue(196)->end()	
+				->integerNode('img_ancho_g')->defaultValue(1024)->end()	
+				->integerNode('img_alto_g')->defaultValue(768)->end()
+			->end();	
+
 
         return $treeBuilder;
     }

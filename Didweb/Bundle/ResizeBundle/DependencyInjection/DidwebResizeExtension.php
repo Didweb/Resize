@@ -19,7 +19,17 @@ class DidwebResizeExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $configuration = new Configuration();
+		$configuration = new Configuration();
+		
+		
+		$config = $this->processConfiguration($configuration, $configs);
+		$container->setParameter('img_carpeta', $config['img_carpeta']);
+		$container->setParameter('img_ancho_p', $config['img_ancho_p']);
+		$container->setParameter('img_alto_p', $config['img_alto_p']);
+		$container->setParameter('img_ancho_g', $config['img_ancho_g']);
+		$container->setParameter('img_alto_g', $config['img_alto_g']);
+		
+		
         $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
