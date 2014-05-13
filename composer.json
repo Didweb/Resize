@@ -15,6 +15,9 @@
             "type": "vcs",
             "url": "git@github.com:Didweb/Resize.git"
         }
-	]
+	],
+	"autoload": {
+        "psr-0": { "Didweb\\Bundle\\ResizeBundle": "vendor/" }
+    }
 	
 }
