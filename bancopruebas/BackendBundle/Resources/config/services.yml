@@ -1,0 +1,7 @@
+parameters:
+#    bancopruebas_backend.example.class: bancopruebas\BackendBundle\Example
+
+services:
+#    bancopruebas_backend.example:
+#        class: %bancopruebas_backend.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

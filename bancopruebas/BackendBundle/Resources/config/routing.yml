@@ -1,0 +1,3 @@
+bancopruebas_backend_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: bancopruebasBackendBundle:Default:index }
