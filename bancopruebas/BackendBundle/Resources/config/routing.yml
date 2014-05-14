@@ -1,3 +1,8 @@
 bancopruebas_backend_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: bancopruebasBackendBundle:Default:index }
+
+Anota:
+    resource: "@bancopruebasBackendBundle/Controller/"
+    prefix:   /
+    type:     annotation  
