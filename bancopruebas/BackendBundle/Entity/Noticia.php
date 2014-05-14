@@ -36,6 +36,8 @@ class Noticia
     private $texto;
 
 
+
+
     /**
      * Get id
      *
