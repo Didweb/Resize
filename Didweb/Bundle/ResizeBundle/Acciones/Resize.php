@@ -48,25 +48,25 @@ class Resize
 
 
 	public function borrarArchivos($nomruta)
-		{
+	{
 		$ruta  = $this->directorio."/g/".$nomruta;
 		$rutap = $this->directorio."/p/".$nomruta;
 				if (file_exists($ruta)) {
 					unlink($ruta);
 					unlink($rutap); }	
 		return 0;
-		}
+	}
 
 
 	public function upload($ultimo,$file)
-		{
+	{
 		$this->ultimo	= $ultimo;
-        $this->file		= $file;	
+        	$this->file	= $file;	
 		   
 		   if (null === $this->file) {
 			return;
 		    }
-			//--->> Sacamos extension
+		   //--->> Sacamos extension
 			$nombredelpath	= $this->file->getClientOriginalName();
 			
 		    //Subimos el archivo con el nuevo nombre
@@ -82,12 +82,12 @@ class Resize
 		
 		    // limpia la propiedad «file» ya que no la necesitas más
 		    $this->file = null;
-		}
+	}
 
 
 	public function img_resize( $tmpname, $size_ancho,$size_alto, $save_dir, $save_name )
-	    {
-		$size = $size_ancho;	
+	{
+	   $size = $size_ancho;	
 	    $save_dir .= ( substr($save_dir,-1) != "/") ? "/" : "";
 	    $gis       = GetImageSize($tmpname);
 	    $type       = $gis[2];
