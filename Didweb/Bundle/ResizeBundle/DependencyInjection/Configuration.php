@@ -25,6 +25,7 @@ class Configuration implements ConfigurationInterface
 				->integerNode('img_alto_p')->defaultValue(196)->end()	
 				->integerNode('img_ancho_g')->defaultValue(1024)->end()	
 				->integerNode('img_alto_g')->defaultValue(768)->end()
+				->scalarNode('img_directorio')->defaultValue('fotos')->end()
 			->end();	
 
 

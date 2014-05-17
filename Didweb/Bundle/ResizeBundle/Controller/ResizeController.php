@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder; 
 
-class DefaultController extends Controller
+class ResizeController extends Controller
 {
 	private $carpeta;
 	private $ancho_p;
@@ -36,6 +36,15 @@ class DefaultController extends Controller
 							));
     }
 
+	    public function mues()
+    {
+		$this->carpeta 	= $this->container->getParameter('img_carpeta');
+		$this->ancho_p 	= $this->container->getParameter('img_ancho_p');
+		$this->alto_p 	= $this->container->getParameter('img_alto_p');
+		$this->ancho_g 	= $this->container->getParameter('img_ancho_g');
+		$this->alto_g 	= $this->container->getParameter('img_alto_g');	
+        echo "<br /> --> ".$this->carpeta; exit;
+    }
 
 
     public function getAbsolutePath(Container $container)
@@ -91,9 +100,9 @@ class DefaultController extends Controller
 
 
 
-	public function upload(Container $container,$size_ancho,$size_alto,$ultimo)
+	public function uploadAction($ultimo)
 		{
-			$this->container = $container;
+			//$this->container = $container;
 			$img_ancho_p 	= $this->container->getParameter('img_ancho_p');
 			$img_alto_p 	= $this->container->getParameter('img_alto_p');
 			$img_ancho_g 	= $this->container->getParameter('img_ancho_g');

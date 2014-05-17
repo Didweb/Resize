@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use bancopruebas\BackendBundle\Entity\Imagen;
 use bancopruebas\BackendBundle\Form\ImagenType;
 
+
 /**
  * Imagen controller.
  *
@@ -17,6 +18,8 @@ use bancopruebas\BackendBundle\Form\ImagenType;
  */
 class ImagenController extends Controller
 {
+
+	
 
     /**
      * Lists all Imagen entities.
@@ -50,8 +53,19 @@ class ImagenController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->setSlug('x'.rand(0,99999));
+            $entity->setExtension();
+            
+            
+			
+            
             $em->persist($entity);
             $em->flush();
+
+			$resize = $this->get('didweb_resize.acciones');
+            $resize->ini($entity->getSlug(),$entity->getFile());
+            $resize->upload();
+
 
             return $this->redirect($this->generateUrl('imagen_show', array('id' => $entity->getId())));
         }

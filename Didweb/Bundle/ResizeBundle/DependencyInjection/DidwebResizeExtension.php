@@ -28,6 +28,7 @@ class DidwebResizeExtension extends Extension
 		$container->setParameter('img_alto_p', $config['img_alto_p']);
 		$container->setParameter('img_ancho_g', $config['img_ancho_g']);
 		$container->setParameter('img_alto_g', $config['img_alto_g']);
+		$container->setParameter('img_directorio', $config['img_directorio']);
 		
 		
         $config = $this->processConfiguration($configuration, $configs);
