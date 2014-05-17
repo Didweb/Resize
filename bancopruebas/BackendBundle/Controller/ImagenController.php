@@ -63,7 +63,7 @@ class ImagenController extends Controller
             $em->flush();
 
 			$resize = $this->get('didweb_resize.acciones');
-            $resize->ini($entity->getSlug(),$entity->getFile());
+            $resize->ini($entity->getSlug().'.'.$entity->getExtension(),$entity->getFile());
             $resize->upload();
 
 
@@ -237,6 +237,10 @@ class ImagenController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            
+            $resize = $this->get('didweb_resize.acciones');
+            $resize->ini($entity->getSlug(),$entity->getFile());
+            $resize->borrarArchivos($entity->getSlug().'.'.$entity->getExtension());
         }
 
         return $this->redirect($this->generateUrl('imagen'));
