@@ -11,7 +11,7 @@ Los tamaños y el director de destino son configurables con parametros desde el 
 
 Instalación mediante composer, poner en el archivo `composer.json` ...
 
-```json
+```
   "require": {
 
     ....
@@ -25,19 +25,19 @@ Instalación mediante composer, poner en el archivo `composer.json` ...
 
 En el archivo `app/AppKernel.php` poner poner...
 
-```json
-$bundles = array(
-...
-new Didweb\Bundle\ResizeBundle\DidwebResizeBundle(),
-....
-);
+```
+	$bundles = array(
+	...
+	new Didweb\Bundle\ResizeBundle\DidwebResizeBundle(),
+	....
+	);
 
 ```
 
 
 Dentro de `app/config/config.yml` poner la siguiente linea dentro de `imports` ...
 
-```json
+```yml
 
 imports:
     - { resource: "@DidwebResizeBundle/Resources/config/services.yml" }
@@ -49,7 +49,7 @@ imports:
 
 Para configurar se ponen los siguientes parametros dentro de `app/config/config.yml` ...
 
-```json
+```yml
 
 didweb_resize:
     img_ancho_p: 240
@@ -80,9 +80,9 @@ Se ha de crear un nombre de carpeta en este caso hemos puesto "fotos" y dentro d
 
 Dentro del código en el lugar que quieras realizar la subida de archivo colocar esto ...
 
-```json
+```php
 
-			$resize = $this->get('didweb_resize.acciones');
+      $resize = $this->get('didweb_resize.acciones');
       $resize->upload($nombreArchivo,$entity->getFile());
 
 ```
@@ -95,7 +95,7 @@ Ejemplo completo:
 
 
 Dentro de tu controlador ....
-```json
+```php
   
     public function createAction(Request $request)
     {
@@ -131,7 +131,7 @@ Dentro de tu controlador ....
 
 ...un ejemplo de entidad Imagen ....
 
-```json
+```php
 
 <?php
 
