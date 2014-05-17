@@ -18,34 +18,29 @@ class Resize
 	public function __construct($container = null)
 	{
 		$this->container = $container;
-	}
-	
-
-	    public function ini($ultimo,$file)
-    {
-		
-		
 		$this->carpeta 	= $this->container->getParameter('img_carpeta');
 		$this->ancho_p 	= $this->container->getParameter('img_ancho_p');
 		$this->alto_p 	= $this->container->getParameter('img_alto_p');
 		$this->ancho_g 	= $this->container->getParameter('img_ancho_g');
 		$this->alto_g 	= $this->container->getParameter('img_alto_g');	
 		$this->directorio = $this->container->getParameter('img_directorio');	
-        $this->ultimo	= $ultimo;
-        $this->file		= $file;
-    }
+	}
+	
+
 
 
 
 	public function CambioNombreImg($nombreViejo,$nombreNuevo)
 	{
+		$this->directorio = $this->container->getParameter('img_directorio');
 		$ruta	= $this->directorio;
-		$rutapV	= $this->directorio."/p/".$nombreViejo;
-		$rutagV	= $this->directorio."/g/".$nombreViejo;
-		
+		$rutapV	= $ruta."/p/".$nombreViejo;
+		$rutagV	= $ruta."/g/".$nombreViejo;
+		 
 			if (file_exists($rutapV) && file_exists($rutagV) ) {
 				rename($rutapV, $ruta.'/p/'.$nombreNuevo);
-				rename($rutagV, $ruta.'/g/'.$nombreNuevo); }
+				rename($rutagV, $ruta.'/g/'.$nombreNuevo); 
+				}
 		
 		
 	}
@@ -63,9 +58,10 @@ class Resize
 		}
 
 
-	public function upload()
+	public function upload($ultimo,$file)
 		{
-			
+		$this->ultimo	= $ultimo;
+        $this->file		= $file;	
 		   
 		   if (null === $this->file) {
 			return;

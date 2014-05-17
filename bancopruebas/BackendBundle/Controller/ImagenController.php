@@ -53,18 +53,16 @@ class ImagenController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity->setSlug('x'.rand(0,99999));
+            
+            $entity->setSlug($entity->getNombre().'-'.rand(0,99999));
             $entity->setExtension();
-            
-            
-			
+
             
             $em->persist($entity);
             $em->flush();
 
 			$resize = $this->get('didweb_resize.acciones');
-            $resize->ini($entity->getSlug().'.'.$entity->getExtension(),$entity->getFile());
-            $resize->upload();
+            $resize->upload($entity->getSlug().'.'.$entity->getExtension(),$entity->getFile());
 
 
             return $this->redirect($this->generateUrl('imagen_show', array('id' => $entity->getId())));
@@ -199,13 +197,25 @@ class ImagenController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Imagen entity.');
         }
-
+		$nombreViejo = $entity->getSlug().'.'.$entity->getExtension();
+		
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
-
+        
+        $ini=$entity->getNombre().'-'.rand(0,9999);
+		$nombreNuevo = $ini.'.'.$entity->getExtension();
+		
+		echo "<br /> Nombre nuevo= ".$nombreNuevo; 
         if ($editForm->isValid()) {
+            
+            $entity->setSlug($ini);
+            $entity->setExtension();
             $em->flush();
+            
+            $resize = $this->get('didweb_resize.acciones');
+			$resize->CambioNombreImg($nombreViejo,$nombreNuevo);
+		 
 
             return $this->redirect($this->generateUrl('imagen_edit', array('id' => $id)));
         }
