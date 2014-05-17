@@ -20,23 +20,6 @@ class Resize
 		$this->container = $container;
 	}
 	
-    public function indexAction($name)
-    {
-		$this->carpeta 	= $this->container->getParameter('img_carpeta');
-		$this->ancho_p 	= $this->container->getParameter('img_ancho_p');
-		$this->alto_p 	= $this->container->getParameter('img_alto_p');
-		$this->ancho_g 	= $this->container->getParameter('img_ancho_g');
-		$this->alto_g 	= $this->container->getParameter('img_alto_g');	
-        return $this->render('DidwebResizeBundle:Default:index.html.twig', 
-							array(
-							'name' 		=> $name,
-							'carpeta'	=> $this->carpeta,
-							'ancho_p'	=> $this->ancho_p,
-							'alto_p'	=> $this->alto_p,
-							'ancho_g'	=> $this->ancho_g,
-							'alto_g'	=> $this->alto_g
-							));
-    }
 
 	    public function ini($ultimo,$file)
     {
