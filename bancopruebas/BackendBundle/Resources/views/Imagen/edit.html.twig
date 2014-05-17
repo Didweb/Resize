@@ -12,5 +12,9 @@
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>
+    
 </ul>
+
+<img src="{{ asset('fotos/p/')}}{{ entity.slug }}.{{ entity.extension }}" />
+
 {% endblock %}

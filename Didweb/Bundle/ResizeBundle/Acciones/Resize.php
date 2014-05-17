@@ -67,16 +67,17 @@ class Resize
 		
 	}
 
-	public function eliminararchivo($nomruta)
+
+
+	public function borrarArchivos($nomruta)
 		{
 		$ruta  = $this->directorio."/g/".$nomruta;
 		$rutap = $this->directorio."/p/".$nomruta;
-			if (file_exists($ruta)) {
-				unlink($ruta);
-				unlink($rutap); }
-		}	
-
-
+				if (file_exists($ruta)) {
+					unlink($ruta);
+					unlink($rutap); }	
+		return 0;
+		}
 
 
 	public function upload()
@@ -156,15 +157,7 @@ class Resize
 	    }
 
 
-public function borrarArchivos($nomruta)
-	{
-	$ruta  = $this->directorio."/g/".$nomruta;
-	$rutap = $this->directorio."/p/".$nomruta;
-			if (file_exists($ruta)) {
-				unlink($ruta);
-				unlink($rutap); }	
-	return 0;
-	}
+
 
 
 
