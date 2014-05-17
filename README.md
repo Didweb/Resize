@@ -13,13 +13,9 @@ Instalación mediante composer, poner en el archivo `composer.json` ...
 
 ```
   "require": {
-
-    ....
-    
-    "didweb/resize": "dev-master"
-    
-    ....
-    
+	    ....
+	    "didweb/resize": "dev-master"
+	    ....
      }
 ```
 
@@ -68,17 +64,20 @@ Los parametros `img_ancho_p` y `img_alto_p` hacen referencia al ancho y alto del
 
 Los parametros `img_ancho_g` y `img_alto_g` hacen referencia al ancho y alto del tamaño grande en pixeles.
 
-El parametro `img_directorio` se ha de especificar el destino d elas imágenes modifica "fotos" por el nombre de carpeta que quieras.
+El parametro `img_directorio` se ha de especificar el destino de las imágenes modifica "fotos" por el nombre de carpeta que quieras.
 
 
 ### Configurar directorio
 
-Se ha de crear un nombre de carpeta en este caso hemos puesto "fotos" y dentro de el se han de crear 2 directorios más uno llamado `p` y otro `g`, son los directorios finales de las imágenes en `p` se almacenaran las de tamño pequeño y en `g` las de tamaño grande.
+Crear un directorio en este caso hemos puesto "fotos" y dentro de él se crean 2 directorios más, uno llamado `p` y otro `g`, son los directorios finales de las imágenes. En `p` se almacenaran las imágenes de tamaño pequeño y en `g` las de tamaño grande.
 
 
 ## Ejemplo de uso
 
 Dentro del código en el lugar que quieras realizar la subida de archivo colocar esto ...
+
+
+Subir Imagen:
 
 ```php
 
@@ -86,12 +85,23 @@ Dentro del código en el lugar que quieras realizar la subida de archivo colocar
       $resize->upload($nombreArchivo,$entity->getFile());
 
 ```
-
-
 ... donde `$nombreArchivo` es el nombre de archivo qu queremos poner y `$entity->getFile()` es el archivo subido mediante el formulario.
 
 
-Ejemplo completo:
+
+Modificar nombre de imagen:
+
+```php
+ 	$resize = $this->get('didweb_resize.acciones');
+	$resize->CambioNombreImg($nombreViejo,$nombreNuevo);
+
+```
+... donde `$nombreViejo` es el nombre que tenia antes la imagen y `$nombreNuevo` es el nombre nuevo de la imagen.
+
+
+
+
+Ejemplo completo para subir una imagen:
 
 
 Dentro de tu controlador ....
