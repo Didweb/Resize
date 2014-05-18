@@ -4,9 +4,8 @@
 	"keywords": ["resize", "redimensionar imagen", "thumbnail"],
 	"homepage": "https://github.com/Didweb",
 	"time": "2014-5-18",
-	"version": "1.0.1",
 	"type": "symfony-bundle",
-    "license": "GPLv3",
+        "license": "GPLv3",
 	"authors": [
 		{
 			"name": "Eduard Pinuaga Linares",
