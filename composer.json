@@ -1,9 +1,10 @@
 {
 	"name": "didweb/resize",
 	"description": "Redimensionar imagenes",
-	"keywords": "resize, redimensionar imagen, thumbnail",
+	"keywords": ["resize", "redimensionar imagen", "thumbnail"],
 	"homepage": "https://github.com/Didweb",
 	"time": "2014-5-18",
+	"version": "1.0.1",
 	"type": "symfony-bundle",
     "license": "GPLv3",
 	"authors": [
