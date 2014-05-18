@@ -1,12 +1,17 @@
 {
 	"name": "didweb/resize",
 	"description": "Redimensionar imagenes",
+	"keywords": "resize, redimensionar imagen, thumbnail",
+	"homepage": "https://github.com/Didweb",
+	"time": "2014-5-18",
 	"type": "symfony-bundle",
-    "license": "MIT",
+    "license": "GPLv3",
 	"authors": [
 		{
 			"name": "Eduard Pinuaga Linares",
-			"email": "info@did-web.com"
+			"email": "info@did-web.com",
+			"homepage": "http://www.did-web.com",
+			"role": "Developer"
 		}
 	],
 	"repositories":[
@@ -18,6 +23,11 @@
 	],
 	"autoload": {
         "psr-0": { "Didweb\\Bundle\\ResizeBundle": "" }
+    },
+    "support": {
+		"email": "info@did-web.com",
+		"source": "https://github.com/Didweb/Resize",
+		"issues": "https://github.com/Didweb/Resize/issues"
     }
 	
 }
