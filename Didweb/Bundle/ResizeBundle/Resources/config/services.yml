@@ -1,7 +1,6 @@
-parameters:
-    didweb_resize.acciones.class: Didweb\Bundle\ResizeBundle\Acciones\Resize
 
 services:
-    didweb_resize.acciones:
-        class: %didweb_resize.acciones.class%
-        arguments: [ @service_container ]
+  didweb_resize.acciones:
+    arguments:
+      - service_container
+    class: Didweb\Bundle\ResizeBundle\Acciones\Resize
